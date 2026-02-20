@@ -15,10 +15,8 @@ def get_user_controller(db, user_id):
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
     return user
-
-def get_all_users_controller(db):
-    return user_service.get_all_users(db)
-
+def get_all_users_controller(db, skip, limit):
+    return user_service.get_all_users(db, skip, limit)
 def update_user_controller(db, user_id, name):
     user = user_service.update_user(db, user_id, name)
     if not user:
