@@ -10,7 +10,7 @@ from app.db import models
 router = APIRouter(prefix="/users", tags=["Users"])
 
 
-@router.post("/all_enhance", response_model=UserResponse)
+@router.post("/all_enhances", response_model=UserResponse)
 def create_user(
     user: UserCreate,
     db: Session = Depends(get_db),
